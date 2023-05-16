@@ -60,13 +60,12 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 onPressed: () {
-                  setState(() {
-                    number = randomNumber.nextInt(6) + 1;
-                  });
+                  setState(
+                    () {
+                      number = randomNumber.nextInt(6) + 1;
+                    },
+                  );
                 },
-              ),
-              Text(
-                number.toString(),
               ),
             ],
           ),
