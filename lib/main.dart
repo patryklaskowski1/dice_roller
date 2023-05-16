@@ -19,10 +19,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'DICE ROLLER',
+      theme: ThemeData(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -42,9 +40,7 @@ class _MyAppState extends State<MyApp> {
                   'images/dice$number.png',
                 ),
               ),
-              const SizedBox(
-                height: 50,
-              ),
+              const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.indigoAccent,
