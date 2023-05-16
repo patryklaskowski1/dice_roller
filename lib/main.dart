@@ -5,10 +5,16 @@ void main() {
   runApp(const MyApp());
 }
 
-var number = 1;
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int number = 1;
+  Random randomNumber = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +36,37 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(
+              Image(
                 height: 250,
                 image: AssetImage(
-                  'images/dice1.png',
+                  'images/dice$number.png',
                 ),
               ),
               const SizedBox(
                 height: 50,
               ),
               ElevatedButton(
-                onPressed: (() {}),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.indigoAccent,
+                  fixedSize: const Size(100, 80),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
                 child: const Text(
                   'ROLL',
+                  style: TextStyle(
+                    fontSize: 28,
+                  ),
                 ),
+                onPressed: () {
+                  setState(() {
+                    number = randomNumber.nextInt(6) + 1;
+                  });
+                },
+              ),
+              Text(
+                number.toString(),
               ),
             ],
           ),
