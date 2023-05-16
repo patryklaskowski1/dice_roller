@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -19,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DICE ROLLER',
+      title: 'SIMPLE DICE ROLLER',
       theme: ThemeData(),
       home: Scaffold(
         appBar: AppBar(
@@ -34,6 +36,14 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Text(
+                'You throw out :',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.indigo,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Image(
                 height: 250,
                 image: AssetImage(
